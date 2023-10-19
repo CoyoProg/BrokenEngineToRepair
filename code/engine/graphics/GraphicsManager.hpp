@@ -24,7 +24,7 @@ namespace engine
 			void clear();
 			void draw(const ShapeList &shapeList, const sf::Transform &transform);
 			void display();
-			void drawSprites();
+			void draw();
 
 			Window& getWindow() { return *window; };
 			std::vector<SpriteRenderer*> spriteRenderers;

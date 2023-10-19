@@ -18,8 +18,6 @@ namespace engine
 
 				virtual void update() override;
 
-				virtual void draw() override;
-
 			private:
 				graphics::ShapeList shapeList;
 				dGeomID collisionGeomId;

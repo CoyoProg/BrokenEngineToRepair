@@ -18,11 +18,6 @@ namespace engine
 			{
 				dGeomDestroy(collisionGeomId);
 			}
-
-			void Character::draw()
-			{
-				//engine::Engine::getInstance().getGraphicsManager().draw(shapeList, getTransform());
-			}
 		}
 	}
 }

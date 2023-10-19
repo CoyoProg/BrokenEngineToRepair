@@ -36,14 +36,6 @@ namespace engine
 			}
 		}
 
-		void Manager::draw()
-		{
-			for (auto entity : entities)
-			{
-				entity->draw();
-			}
-		}
-
 		void Manager::gameOver()
 		{
 			if (!preventMapCompletion)

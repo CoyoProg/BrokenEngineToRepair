@@ -16,8 +16,6 @@ namespace engine
 				Character();
 				virtual ~Character();
 
-				virtual void draw() override;
-
 			protected:
 				//graphics::ShapeList shapeList;
 				dGeomID collisionGeomId;

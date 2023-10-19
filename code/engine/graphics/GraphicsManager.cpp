@@ -29,7 +29,7 @@ namespace engine
 			window->clear();
 		}
 
-		void Manager::drawSprites() 
+		void Manager::draw() 
 		{
 			int spriteCount = spriteRenderers.size();
 			for (int i = 0; i < spriteCount; i++)

@@ -10,10 +10,14 @@ namespace engine
 		{
 			Target::Target()
 			{
-				shapeList.load("target");
-
 				collisionGeomId = dCreateBox(engine::Engine::getInstance().getPhysicsManager().getSpaceId(), gameplay::Manager::CELL_SIZE * 0.9f, gameplay::Manager::CELL_SIZE * 0.9f, 1.f);
 				dGeomSetData(collisionGeomId, this);
+
+				SpriteRenderer* spriteR = new SpriteRenderer();
+				spriteR->SetActor(this);
+				spriteR->shapeList.load("target");
+				components.push_back(spriteR);
+				engine::Engine::getInstance().getGraphicsManager().spriteRenderers.push_back(spriteR);
 			}
 
 			Target::~Target()
@@ -25,11 +29,6 @@ namespace engine
 			{
 				auto &position = getPosition();
 				dGeomSetPosition(collisionGeomId, position.x, position.y, 0);
-			}
-
-			void Target::draw()
-			{
-				engine::Engine::getInstance().getGraphicsManager().draw(shapeList, getTransform());
 			}
 		}
 	}

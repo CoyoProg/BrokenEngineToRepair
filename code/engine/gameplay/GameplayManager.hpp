@@ -18,7 +18,6 @@ namespace engine
 		{
 		public:
 			void update();
-			void draw();
 
 			void gameOver();
 
