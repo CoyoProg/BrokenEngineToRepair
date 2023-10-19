@@ -3,8 +3,6 @@
 #include <SFML/Graphics/Transform.hpp>
 #include <vector>
 
-//#include <engine/gameplay/Component.hpp>
-
 namespace engine
 {
 	class Component;

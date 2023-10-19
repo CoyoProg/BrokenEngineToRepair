@@ -63,7 +63,6 @@ namespace engine
 
 	void Engine::Update(sf::Clock& clock)
 	{
-		// => Mettre ca dans Engine
 		mInputManager->clear();
 
 		sf::Event event;
@@ -97,9 +96,6 @@ namespace engine
 		}
 
 		/** TO DO :
-		* 1- KILL SINGLETON
-		* (create Constructor / destructor
-		*
 		* 2- KILL DEPENDANCE
 		* (create interface ?)
 		*
