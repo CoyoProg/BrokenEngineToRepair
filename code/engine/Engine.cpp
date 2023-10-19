@@ -23,10 +23,10 @@ namespace engine
 
 	void Engine::init()
 	{
-		mGraphicsManager = new graphics::Manager;
-		mPhysicsManager = new physics::Manager;
-		mGameplayManager = new gameplay::Manager;
-		mInputManager = new input::Manager;
+		mGraphicsManager = std::make_unique<graphics::Manager>();
+		mPhysicsManager = std::make_unique <physics::Manager>();
+		mGameplayManager = std::make_unique <gameplay::Manager>();
+		mInputManager = std::make_unique <input::Manager>();
 	}
 
 	void Engine::loadConfiguration()

@@ -7,6 +7,7 @@
 #include "gameplay/GameplayManager.hpp"
 #include <SFML/Window/Event.hpp>
 #include <SFML/System/Clock.hpp>
+#include <memory>
 
 class Manager;
 
@@ -41,10 +42,10 @@ namespace engine
 		// Configuration
 		std::string startMap;
 
-		graphics::Manager* mGraphicsManager = nullptr;
-		physics::Manager* mPhysicsManager = nullptr;
-		gameplay::Manager* mGameplayManager = nullptr;
-		input::Manager* mInputManager = nullptr;
+		std::unique_ptr<graphics::Manager> mGraphicsManager = nullptr;
+		std::unique_ptr < physics::Manager> mPhysicsManager = nullptr;
+		std::unique_ptr < gameplay::Manager> mGameplayManager = nullptr;
+		std::unique_ptr < input::Manager> mInputManager = nullptr;
 
 		static Engine *instance;
 	};
