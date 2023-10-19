@@ -13,14 +13,14 @@
     <Filter Include="input">
       <UniqueIdentifier>{B54AA90F-215F-D1C0-EAE0-742056B4CDF1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="interfaces">
+      <UniqueIdentifier>{C9206369-B5D8-A4B6-1EE0-7D120AB73FA7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="physics">
       <UniqueIdentifier>{A823A1AC-1403-2048-1D1B-AB1E897986A9}</UniqueIdentifier>
     </Filter>
     <Filter Include="util">
       <UniqueIdentifier>{43339F7C-2F6A-A00D-D856-8610C46C1C0F}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="gameplay\Interface">
-      <UniqueIdentifier>{69b158fa-58ea-4d12-80d8-a29bed084065}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -52,18 +52,19 @@
     <ClInclude Include="..\..\code\engine\input\InputManager.hpp">
       <Filter>input</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\engine\interfaces\IObserver.h">
+      <Filter>interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\engine\interfaces\ISubject.h">
+      <Filter>interfaces</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\code\engine\physics\PhysicsManager.hpp">
       <Filter>physics</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\engine\util\StringId.hpp">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="ISubject.h">
-      <Filter>gameplay\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="IObserver.h">
-      <Filter>gameplay\Interface</Filter>
-    </ClInclude>
+    <ClInclude Include="..\..\code\engine\graphics\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\engine\Engine.cpp" />
@@ -101,5 +102,6 @@
     <ClCompile Include="..\..\code\engine\util\StringId.cpp">
       <Filter>util</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\engine\graphics\Window.cpp" />
   </ItemGroup>
 </Project>

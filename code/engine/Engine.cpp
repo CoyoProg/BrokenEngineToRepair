@@ -5,6 +5,7 @@
 #include <sstream>
 #include <pugixml/pugixml.hpp>
 #include <SFML/System.hpp>
+#include "graphics/Window.h"
 
 namespace engine
 {
@@ -66,7 +67,7 @@ namespace engine
 		mInputManager->clear();
 
 		sf::Event event;
-		while (mGraphicsManager->getWindow().pollEvent(event))
+		while (mGraphicsManager->getWindow().getWindow().pollEvent(event))
 		{
 			switch (event.type)
 			{

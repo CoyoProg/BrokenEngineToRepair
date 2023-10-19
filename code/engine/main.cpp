@@ -7,7 +7,6 @@
 
 #elif defined(PLATFORM_WINDOWS)
 #include <windows.h>
-
 #else
 #error Unsupported platform
 #endif

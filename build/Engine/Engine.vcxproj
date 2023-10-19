@@ -407,11 +407,12 @@
     <ClInclude Include="..\..\code\engine\gameplay\entities\Target.hpp" />
     <ClInclude Include="..\..\code\engine\graphics\GraphicsManager.hpp" />
     <ClInclude Include="..\..\code\engine\graphics\ShapeList.hpp" />
+    <ClInclude Include="..\..\code\engine\graphics\Window.h" />
     <ClInclude Include="..\..\code\engine\input\InputManager.hpp" />
     <ClInclude Include="..\..\code\engine\interfaces\IObserver.h" />
+    <ClInclude Include="..\..\code\engine\interfaces\ISubject.h" />
     <ClInclude Include="..\..\code\engine\physics\PhysicsManager.hpp" />
     <ClInclude Include="..\..\code\engine\util\StringId.hpp" />
-    <ClInclude Include="ISubject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\engine\Engine.cpp" />
@@ -423,6 +424,7 @@
     <ClCompile Include="..\..\code\engine\gameplay\entities\Target.cpp" />
     <ClCompile Include="..\..\code\engine\graphics\GraphicsManager.cpp" />
     <ClCompile Include="..\..\code\engine\graphics\ShapeList.cpp" />
+    <ClCompile Include="..\..\code\engine\graphics\Window.cpp" />
     <ClCompile Include="..\..\code\engine\input\InputManager.cpp" />
     <ClCompile Include="..\..\code\engine\main.cpp" />
     <ClCompile Include="..\..\code\engine\physics\PhysicsManager.cpp" />
