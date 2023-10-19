@@ -9,7 +9,7 @@
 
 namespace engine
 {
-	Engine *Engine::instance = nullptr;
+	std::unique_ptr <Engine> Engine::instance = nullptr;
 
 	Engine::Engine()
 	{
@@ -24,9 +24,9 @@ namespace engine
 	void Engine::init()
 	{
 		mGraphicsManager = std::make_unique<graphics::Manager>();
-		mPhysicsManager = std::make_unique <physics::Manager>();
-		mGameplayManager = std::make_unique <gameplay::Manager>();
-		mInputManager = std::make_unique <input::Manager>();
+		mPhysicsManager = std::make_unique<physics::Manager>();
+		mGameplayManager = std::make_unique<gameplay::Manager>();
+		mInputManager = std::make_unique<input::Manager>();
 	}
 
 	void Engine::loadConfiguration()
@@ -131,7 +131,7 @@ namespace engine
 	Engine &Engine::getInstance()
 	{
 		if (!instance)
-			instance = new Engine();
+			instance = std::make_unique<Engine>();
 
 		return *instance;
 	}

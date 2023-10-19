@@ -20,6 +20,6 @@ namespace engine
 
 	void SpriteRenderer::draw()
 	{
-		engine::Engine::getInstance().getGraphicsManager().draw(shapeList, actor->getTransform());
+		engine::Engine::getInstance().getGraphicsManager().drawShape(shapeList, actor->getTransform());
 	}
 }

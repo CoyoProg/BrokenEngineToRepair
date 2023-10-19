@@ -47,6 +47,6 @@ namespace engine
 		std::unique_ptr < gameplay::Manager> mGameplayManager = nullptr;
 		std::unique_ptr < input::Manager> mInputManager = nullptr;
 
-		static Engine *instance;
+		static std::unique_ptr<Engine> instance;
 	};
 }

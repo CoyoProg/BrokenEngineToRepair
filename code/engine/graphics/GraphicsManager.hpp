@@ -3,9 +3,9 @@
 #include <SFML/Graphics/Shape.hpp>
 #include <vector>
 #include <engine/gameplay/components/SpriteRenderer.hpp>
+#include <memory>
 
 class Window;
-
 
 namespace engine
 {
@@ -21,7 +21,7 @@ namespace engine
 
 			void update();
 
-			void draw(const ShapeList &shapeList, const sf::Transform &transform);
+			void drawShape(const ShapeList &shapeList, const sf::Transform &transform);
 			void display();
 			void draw();
 
@@ -29,7 +29,7 @@ namespace engine
 			std::vector<SpriteRenderer*> spriteRenderers;
 
 		private:
-			Window* window = nullptr;
+			std::unique_ptr<Window> window = nullptr;
 		};
 	}
 }

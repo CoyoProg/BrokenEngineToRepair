@@ -13,7 +13,7 @@ namespace engine
 	{
 		Manager::Manager()
 		{
-			window = new Window();
+			window = std::make_unique<Window>();
 		}
 
 		Manager::~Manager()
@@ -34,7 +34,7 @@ namespace engine
 			}
 		}
 
-		void Manager::draw(const ShapeList &shapeList, const sf::Transform &transform)
+		void Manager::drawShape(const ShapeList &shapeList, const sf::Transform &transform)
 		{
 			sf::RenderStates renderStates{ transform };
 			for (auto shape : shapeList.getShapes())
