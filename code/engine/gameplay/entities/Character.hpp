@@ -17,7 +17,6 @@ namespace engine
 				virtual ~Character();
 
 			protected:
-				//graphics::ShapeList shapeList;
 				dGeomID collisionGeomId;
 
 				bool isWalking{ false };

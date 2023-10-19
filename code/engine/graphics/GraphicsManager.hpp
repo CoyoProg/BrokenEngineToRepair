@@ -21,7 +21,6 @@ namespace engine
 
 			void update();
 
-			void clear();
 			void draw(const ShapeList &shapeList, const sf::Transform &transform);
 			void display();
 			void draw();

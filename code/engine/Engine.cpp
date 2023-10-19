@@ -113,9 +113,6 @@ namespace engine
 		mGameplayManager->update();
 		mGraphicsManager->update();
 
-		mGraphicsManager->clear();
-
-		// Weird
 		mGraphicsManager->draw();
 
 		mGraphicsManager->display();

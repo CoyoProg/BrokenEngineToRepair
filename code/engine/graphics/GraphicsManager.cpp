@@ -24,13 +24,9 @@ namespace engine
 		{
 		}
 
-		void Manager::clear()
-		{
-			window->clear();
-		}
-
 		void Manager::draw() 
 		{
+			window->clear();
 			int spriteCount = spriteRenderers.size();
 			for (int i = 0; i < spriteCount; i++)
 			{
