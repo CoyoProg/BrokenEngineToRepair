@@ -24,7 +24,12 @@ namespace engine
 			}
 
 			preventMapCompletion = false;
-			if (nextMapRequested && !nextMapName.empty())
+			if (resetMapRequested)
+			{
+				resetMapRequested = false;
+				loadMap(currentMapName);
+			}
+			else if (nextMapRequested && !nextMapName.empty())
 			{
 				nextMapRequested = false;
 				loadMap(nextMapName);
@@ -41,8 +46,11 @@ namespace engine
 
 		void Manager::gameOver()
 		{
-			std::cout << "Game over" << std::endl;
-			loadMap(currentMapName);
+			if (!preventMapCompletion)
+			{
+				std::cout << "Game over" << std::endl;
+				resetMapRequested = true;
+			}
 		}
 
 		sf::Vector2f Manager::getViewCenter() const

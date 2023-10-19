@@ -43,6 +43,7 @@ namespace engine
 
 			bool preventMapCompletion{ false };
 			bool nextMapRequested{ false };
+			bool resetMapRequested{ false };
 		};
 	}
 }
