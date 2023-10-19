@@ -399,7 +399,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\engine\Engine.hpp" />
-    <ClInclude Include="..\..\code\engine\gameplay\Entity.hpp" />
+    <ClInclude Include="..\..\code\engine\gameplay\Component.hpp" />
+    <ClInclude Include="..\..\code\engine\gameplay\Actor.hpp" />
+    <ClInclude Include="..\..\code\engine\gameplay\components\SpriteRenderer.hpp" />
     <ClInclude Include="..\..\code\engine\gameplay\GameplayManager.hpp" />
     <ClInclude Include="..\..\code\engine\gameplay\entities\Character.hpp" />
     <ClInclude Include="..\..\code\engine\gameplay\entities\Enemy.hpp" />
@@ -416,7 +418,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\engine\Engine.cpp" />
-    <ClCompile Include="..\..\code\engine\gameplay\Entity.cpp" />
+    <ClCompile Include="..\..\code\engine\gameplay\Component.cpp" />
+    <ClCompile Include="..\..\code\engine\gameplay\Actor.cpp" />
+    <ClCompile Include="..\..\code\engine\gameplay\components\SpriteRenderer.cpp" />
     <ClCompile Include="..\..\code\engine\gameplay\GameplayManager.cpp" />
     <ClCompile Include="..\..\code\engine\gameplay\entities\Character.cpp" />
     <ClCompile Include="..\..\code\engine\gameplay\entities\Enemy.cpp" />

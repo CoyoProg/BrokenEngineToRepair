@@ -5,6 +5,7 @@
 #include <SFML/Window/Event.hpp>
 #include <engine/graphics/ShapeList.hpp>
 #include <engine/graphics/Window.h>
+#include <engine/gameplay/components/SpriteRenderer.hpp>
 
 namespace engine
 {
@@ -26,6 +27,15 @@ namespace engine
 		void Manager::clear()
 		{
 			window->clear();
+		}
+
+		void Manager::drawSprites() 
+		{
+			int spriteCount = spriteRenderers.size();
+			for (int i = 0; i < spriteCount; i++)
+			{
+				spriteRenderers[i]->draw();
+			}
 		}
 
 		void Manager::draw(const ShapeList &shapeList, const sf::Transform &transform)

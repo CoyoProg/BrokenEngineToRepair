@@ -21,7 +21,7 @@ namespace engine
 
 			void Character::draw()
 			{
-				engine::Engine::getInstance().getGraphicsManager().draw(shapeList, getTransform());
+				//engine::Engine::getInstance().getGraphicsManager().draw(shapeList, getTransform());
 			}
 		}
 	}

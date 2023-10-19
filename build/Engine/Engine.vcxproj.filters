@@ -22,10 +22,13 @@
     <Filter Include="util">
       <UniqueIdentifier>{43339F7C-2F6A-A00D-D856-8610C46C1C0F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="gameplay\components">
+      <UniqueIdentifier>{a203a479-1239-461c-9580-c37a3b21c741}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\engine\Engine.hpp" />
-    <ClInclude Include="..\..\code\engine\gameplay\Entity.hpp">
+    <ClInclude Include="..\..\code\engine\gameplay\Actor.hpp">
       <Filter>gameplay</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\engine\gameplay\GameplayManager.hpp">
@@ -65,10 +68,16 @@
       <Filter>util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\engine\graphics\Window.h" />
+    <ClInclude Include="..\..\code\engine\gameplay\Component.hpp">
+      <Filter>gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\engine\gameplay\components\SpriteRenderer.hpp">
+      <Filter>gameplay\components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\engine\Engine.cpp" />
-    <ClCompile Include="..\..\code\engine\gameplay\Entity.cpp">
+    <ClCompile Include="..\..\code\engine\gameplay\Actor.cpp">
       <Filter>gameplay</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\engine\gameplay\GameplayManager.cpp">
@@ -103,5 +112,11 @@
       <Filter>util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\engine\graphics\Window.cpp" />
+    <ClCompile Include="..\..\code\engine\gameplay\Component.cpp">
+      <Filter>gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\engine\gameplay\components\SpriteRenderer.cpp">
+      <Filter>gameplay\components</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -3,13 +3,12 @@
 #include <set>
 #include <string>
 #include <SFML/System/Vector2.hpp>
+#include <engine/gameplay/Actor.hpp>
 
 namespace engine
 {
 	namespace gameplay
 	{
-		class Entity;
-
 		namespace entities
 		{
 			class Player;
@@ -32,7 +31,7 @@ namespace engine
 
 			static const float CELL_SIZE;
 		private:
-			std::set<Entity *> entities;
+			std::set<Actor *> entities;
 			entities::Player *playerEntity{};
 
 			// Map

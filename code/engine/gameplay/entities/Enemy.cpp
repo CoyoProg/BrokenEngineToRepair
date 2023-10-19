@@ -48,6 +48,12 @@ namespace engine
 
 			void Enemy::loadArchetype(const std::string &archetypeName)
 			{
+				SpriteRenderer* spriteR = new SpriteRenderer();
+				spriteR->SetActor(this);
+				//spriteR->shapeList.load("player");
+				components.push_back(spriteR);
+				engine::Engine::getInstance().getGraphicsManager().spriteRenderers.push_back(spriteR);
+
 				std::stringstream filename;
 				filename << "archetypes/" << archetypeName << ".xml";
 
@@ -60,7 +66,8 @@ namespace engine
 					auto xmlArchetype = doc.first_child();
 
 					std::string shapeListName = xmlArchetype.child_value("shapelist");
-					assert(shapeList.load(shapeListName));
+					//assert(shapeList.load(shapeListName));
+					assert(spriteR->shapeList.load(shapeListName));
 
 					visionRadius = std::stof(xmlArchetype.child_value("vision_radius"));
 					assert(visionRadius > 0.f);

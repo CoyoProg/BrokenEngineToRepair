@@ -2,7 +2,7 @@
 
 #include <ode/collision.h>
 #include <engine/graphics/ShapeList.hpp>
-#include <engine/gameplay/Entity.hpp>
+#include <engine/gameplay/Actor.hpp>
 
 namespace engine
 {
@@ -10,7 +10,7 @@ namespace engine
 	{
 		namespace entities
 		{
-			class Target : public Entity
+			class Target : public Actor
 			{
 			public:
 				Target();

@@ -1,8 +1,11 @@
 #pragma once
 
 #include <SFML/Graphics/Shape.hpp>
+#include <vector>
+#include <engine/gameplay/components/SpriteRenderer.hpp>
 
 class Window;
+
 
 namespace engine
 {
@@ -21,8 +24,10 @@ namespace engine
 			void clear();
 			void draw(const ShapeList &shapeList, const sf::Transform &transform);
 			void display();
+			void drawSprites();
 
 			Window& getWindow() { return *window; };
+			std::vector<SpriteRenderer*> spriteRenderers;
 
 		private:
 			Window* window = nullptr;

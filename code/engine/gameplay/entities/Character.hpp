@@ -2,7 +2,7 @@
 
 #include <ode/collision.h>
 #include <engine/graphics/ShapeList.hpp>
-#include <engine/gameplay/Entity.hpp>
+#include <engine/gameplay/Actor.hpp>
 
 namespace engine
 {
@@ -10,7 +10,7 @@ namespace engine
 	{
 		namespace entities
 		{
-			class Character : public Entity
+			class Character : public Actor
 			{
 			public:
 				Character();
@@ -19,7 +19,7 @@ namespace engine
 				virtual void draw() override;
 
 			protected:
-				graphics::ShapeList shapeList;
+				//graphics::ShapeList shapeList;
 				dGeomID collisionGeomId;
 
 				bool isWalking{ false };

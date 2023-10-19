@@ -116,6 +116,7 @@ namespace engine
 		mGraphicsManager->clear();
 
 		// Weird
+		mGraphicsManager->drawSprites();
 		mGameplayManager->draw();
 
 		mGraphicsManager->display();
