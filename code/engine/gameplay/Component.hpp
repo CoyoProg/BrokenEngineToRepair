@@ -10,12 +10,12 @@ namespace engine
 	public:
 		virtual ~Component();
 
-		void SetActor(gameplay::Actor* actor_) 
+		void SetActor(std::shared_ptr<gameplay::Actor> actor_) 
 		{
 			actor = actor_;
 		}
 
 	protected:
-		gameplay::Actor* actor = nullptr;
+		std::shared_ptr <gameplay::Actor> actor = nullptr;
 	};
 }

@@ -14,14 +14,16 @@ namespace engine
 			public:
 				Enemy(const std::string &archetypeName);
 
-				virtual void update() override;
+				void init() override;
+				void update() override;
 
 			private:
 				float visionRadius{ 0 };
 				int shootDelay{ 0 };
 				int shootDelayCounter{ 0 };
 
-				void loadArchetype(const std::string &archetypeName);
+				std::string archetypeName = "";
+				void loadArchetype();
 			};
 		}
 	}

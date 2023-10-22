@@ -30,8 +30,8 @@ namespace engine
 
 			static const float CELL_SIZE;
 		private:
-			std::set<Actor *> entities;
-			entities::Player *playerEntity{};
+			std::set<std::shared_ptr<Actor>> entities;
+			std::shared_ptr <entities::Player> playerEntity{};
 
 			// Map
 			std::string currentMapName;

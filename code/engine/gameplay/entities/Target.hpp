@@ -16,7 +16,8 @@ namespace engine
 				Target();
 				~Target();
 
-				virtual void update() override;
+				void init() override;
+				void update() override;
 
 			private:
 				dGeomID collisionGeomId;

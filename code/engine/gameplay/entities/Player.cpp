@@ -16,12 +16,15 @@ namespace engine
 		{
 			Player::Player()
 			{
-				//shapeList.load("player");
+			}
+
+			void Player::init()
+			{
 				collisionGeomId = dCreateBox(engine::Engine::getInstance().getPhysicsManager().getSpaceId(), gameplay::Manager::CELL_SIZE * 0.9f, gameplay::Manager::CELL_SIZE * 0.9f, 1.f);
 				dGeomSetData(collisionGeomId, this);
 
 				std::shared_ptr<SpriteRenderer> spriteR = std::make_shared<SpriteRenderer>();
-				spriteR->SetActor(this);
+				spriteR->SetActor(shared_from_this());
 				spriteR->shapeList.load("player");
 				components.push_back(spriteR);
 				engine::Engine::getInstance().getGraphicsManager().spriteRenderers.push_back(spriteR);

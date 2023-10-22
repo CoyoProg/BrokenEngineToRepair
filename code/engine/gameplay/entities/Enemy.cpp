@@ -12,9 +12,15 @@ namespace engine
 	{
 		namespace entities
 		{
-			Enemy::Enemy(const std::string &archetypeName)
+			Enemy::Enemy(const std::string &archetypeName_)
 			{
-				loadArchetype(archetypeName);
+				archetypeName = archetypeName_;
+				
+			}
+
+			void Enemy::init()
+			{
+				loadArchetype();
 			}
 
 			void Enemy::update()
@@ -46,11 +52,10 @@ namespace engine
 				}
 			}
 
-			void Enemy::loadArchetype(const std::string &archetypeName)
+			void Enemy::loadArchetype()
 			{
 				std::shared_ptr<SpriteRenderer> spriteR = std::make_shared<SpriteRenderer>();
-				spriteR->SetActor(this);
-				//spriteR->shapeList.load("player");
+				spriteR->SetActor(shared_from_this());
 				components.push_back(spriteR);
 				engine::Engine::getInstance().getGraphicsManager().spriteRenderers.push_back(spriteR);
 

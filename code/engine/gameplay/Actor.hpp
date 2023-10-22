@@ -9,11 +9,12 @@ namespace engine
 	class Component;
 	namespace gameplay
 	{
-		class Actor
+		class Actor : public std::enable_shared_from_this<Actor>
 		{
 		public:
 			virtual ~Actor();
 
+			virtual void init() = 0;
 			virtual void update() = 0;
 
 			const sf::Vector2f& getPosition() const;

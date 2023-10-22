@@ -52,10 +52,6 @@ namespace engine
 
 		void Manager::loadMap(const std::string & mapName)
 		{
-			for (auto entity : entities)
-			{
-				delete entity;
-			}
 			entities.clear();
 
 			std::stringstream filename;
@@ -87,7 +83,8 @@ namespace engine
 
 						std::string archetypeName = xmlElement.child_value("archetype");
 
-						auto entity = new entities::Enemy{ archetypeName };
+						auto entity = std::make_shared<entities::Enemy>(archetypeName);
+						entity->init();
 						entity->setPosition(sf::Vector2f{ (column + 0.5f) * CELL_SIZE, (row + 0.5f) * CELL_SIZE });
 
 						entities.insert(entity);
@@ -101,7 +98,8 @@ namespace engine
 						int column = std::stoi(xmlElement.child_value("column"));
 						assert(column >= 0 && column < columns);
 
-						auto entity = new entities::Player{};
+						auto entity = std::make_shared <entities::Player>();
+						entity->init();
 						entity->setPosition(sf::Vector2f{ (column + 0.5f) * CELL_SIZE, (row + 0.5f) * CELL_SIZE });
 
 						entities.insert(entity);
@@ -116,7 +114,8 @@ namespace engine
 						int column = std::stoi(xmlElement.child_value("column"));
 						assert(column >= 0 && column < columns);
 
-						auto entity = new entities::Target{};
+						auto entity = std::make_shared<entities::Target>();
+						entity->init();
 						entity->setPosition(sf::Vector2f{ (column + 0.5f) * CELL_SIZE, (row + 0.5f) * CELL_SIZE });
 
 						entities.insert(entity);

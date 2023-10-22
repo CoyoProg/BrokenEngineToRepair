@@ -9,20 +9,24 @@ namespace engine
 		namespace entities
 		{
 			Target::Target()
-			{
-				collisionGeomId = dCreateBox(engine::Engine::getInstance().getPhysicsManager().getSpaceId(), gameplay::Manager::CELL_SIZE * 0.9f, gameplay::Manager::CELL_SIZE * 0.9f, 1.f);
-				dGeomSetData(collisionGeomId, this);
-
-				std::shared_ptr<SpriteRenderer> spriteR = std::make_shared<SpriteRenderer>();
-				spriteR->SetActor(this);
-				spriteR->shapeList.load("target");
-				components.push_back(spriteR);
-				engine::Engine::getInstance().getGraphicsManager().spriteRenderers.push_back(spriteR);
+			{			
 			}
 
 			Target::~Target()
 			{
 				dGeomDestroy(collisionGeomId);
+			}
+
+			void Target::init()
+			{
+				collisionGeomId = dCreateBox(engine::Engine::getInstance().getPhysicsManager().getSpaceId(), gameplay::Manager::CELL_SIZE * 0.9f, gameplay::Manager::CELL_SIZE * 0.9f, 1.f);
+				dGeomSetData(collisionGeomId, this);
+
+				std::shared_ptr<SpriteRenderer> spriteR = std::make_shared<SpriteRenderer>();
+				spriteR->SetActor(shared_from_this());
+				spriteR->shapeList.load("target");
+				components.push_back(spriteR);
+				engine::Engine::getInstance().getGraphicsManager().spriteRenderers.push_back(spriteR);
 			}
 
 			void Target::update()

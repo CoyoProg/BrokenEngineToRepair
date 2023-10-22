@@ -13,7 +13,8 @@ namespace engine
 			public:
 				Player();
 
-				virtual void update() override;
+				void init() override;
+				void update() override;
 
 				bool hasJustMoved() const;
 
