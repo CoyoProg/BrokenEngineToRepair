@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics/Transform.hpp>
 #include <vector>
+#include <memory>
 
 namespace engine
 {
@@ -22,7 +23,7 @@ namespace engine
 			void setRotation(float newRotation);
 
 			const sf::Transform& getTransform() const;
-			std::vector<Component*> components;
+			std::vector<std::shared_ptr<Component>> components;
 
 		private:
 			sf::Vector2f _position{};

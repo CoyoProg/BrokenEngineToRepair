@@ -48,7 +48,7 @@ namespace engine
 
 			void Enemy::loadArchetype(const std::string &archetypeName)
 			{
-				SpriteRenderer* spriteR = new SpriteRenderer();
+				std::shared_ptr<SpriteRenderer> spriteR = std::make_shared<SpriteRenderer>();
 				spriteR->SetActor(this);
 				//spriteR->shapeList.load("player");
 				components.push_back(spriteR);

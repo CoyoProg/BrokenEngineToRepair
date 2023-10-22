@@ -6,7 +6,7 @@ namespace engine
 {
 	SpriteRenderer::~SpriteRenderer()
 	{
-		auto& renderers = engine::Engine::getInstance().getGraphicsManager().spriteRenderers;
+		/*auto& renderers = engine::Engine::getInstance().getGraphicsManager().spriteRenderers;
 		int spriteRenderersCount = renderers.size();
 		for (int i = 0; i < spriteRenderersCount; i++)
 		{
@@ -15,7 +15,7 @@ namespace engine
 				renderers.erase(renderers.begin() + i);
 				break;
 			}
-		}
+		}*/
 	}
 
 	void SpriteRenderer::draw()

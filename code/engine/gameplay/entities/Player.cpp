@@ -20,7 +20,7 @@ namespace engine
 				collisionGeomId = dCreateBox(engine::Engine::getInstance().getPhysicsManager().getSpaceId(), gameplay::Manager::CELL_SIZE * 0.9f, gameplay::Manager::CELL_SIZE * 0.9f, 1.f);
 				dGeomSetData(collisionGeomId, this);
 
-				SpriteRenderer* spriteR = new SpriteRenderer();
+				std::shared_ptr<SpriteRenderer> spriteR = std::make_shared<SpriteRenderer>();
 				spriteR->SetActor(this);
 				spriteR->shapeList.load("player");
 				components.push_back(spriteR);

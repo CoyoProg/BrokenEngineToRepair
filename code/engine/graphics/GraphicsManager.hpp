@@ -26,7 +26,7 @@ namespace engine
 			void draw();
 
 			Window& getWindow() { return *window; };
-			std::vector<SpriteRenderer*> spriteRenderers;
+			std::vector<std::shared_ptr<SpriteRenderer>> spriteRenderers;
 
 		private:
 			std::unique_ptr<Window> window = nullptr;
