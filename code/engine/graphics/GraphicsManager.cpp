@@ -30,7 +30,21 @@ namespace engine
 			int spriteCount = spriteRenderers.size();
 			for (int i = 0; i < spriteCount; i++)
 			{
-				spriteRenderers[i]->draw();
+				spriteRenderers[i].lock()->draw();
+			}
+		}
+
+		// TODO : make a better system
+		void Manager::removeSprite()
+		{
+			int spriteCount = spriteRenderers.size();
+			for (int i = 0; i < spriteCount; i++)
+			{
+				if (spriteRenderers[i].expired())
+				{
+					spriteRenderers.erase(spriteRenderers.begin() + i);
+					break;
+				}
 			}
 		}
 

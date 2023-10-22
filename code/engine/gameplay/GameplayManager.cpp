@@ -52,6 +52,10 @@ namespace engine
 
 		void Manager::loadMap(const std::string & mapName)
 		{
+			for (auto entity : entities)
+			{
+				entity->components.clear();
+			}
 			entities.clear();
 
 			std::stringstream filename;

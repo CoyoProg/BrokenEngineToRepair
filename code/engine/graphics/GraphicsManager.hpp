@@ -21,12 +21,13 @@ namespace engine
 
 			void update();
 
+			void removeSprite();
 			void drawShape(const ShapeList &shapeList, const sf::Transform &transform);
 			void display();
 			void draw();
 
 			Window& getWindow() { return *window; };
-			std::vector<std::shared_ptr<SpriteRenderer>> spriteRenderers;
+			std::vector<std::weak_ptr<SpriteRenderer>> spriteRenderers;
 
 		private:
 			std::unique_ptr<Window> window = nullptr;
