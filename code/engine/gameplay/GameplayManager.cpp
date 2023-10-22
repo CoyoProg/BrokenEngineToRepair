@@ -18,7 +18,7 @@ namespace engine
 
 		void Manager::update()
 		{
-			for (auto entity : entities)
+			for (auto& entity : entities)
 			{
 				entity->update();
 			}
@@ -52,7 +52,8 @@ namespace engine
 
 		void Manager::loadMap(const std::string & mapName)
 		{
-			for (auto entity : entities)
+			// Clear all components to clear references
+			for (auto& entity : entities)
 			{
 				entity->components.clear();
 			}

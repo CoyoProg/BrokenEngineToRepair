@@ -7,12 +7,6 @@ namespace engine
 	{
 		Actor::~Actor()
 		{
-			/*int componentCount = components.size();
-			for (int i = 0; i < componentCount; i++)
-			{
-				delete components[i];
-			}
-			components.clear();*/
 		}
 
 		const sf::Vector2f & Actor::getPosition() const

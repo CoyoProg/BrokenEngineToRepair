@@ -23,7 +23,6 @@ namespace engine
 
 			void removeSprite();
 			void drawShape(const ShapeList &shapeList, const sf::Transform &transform);
-			void display();
 			void draw();
 
 			Window& getWindow() { return *window; };

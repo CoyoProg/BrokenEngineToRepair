@@ -71,7 +71,7 @@ namespace engine
 					auto xmlArchetype = doc.first_child();
 
 					std::string shapeListName = xmlArchetype.child_value("shapelist");
-					//assert(shapeList.load(shapeListName));
+
 					assert(spriteR->shapeList.load(shapeListName));
 
 					visionRadius = std::stof(xmlArchetype.child_value("vision_radius"));

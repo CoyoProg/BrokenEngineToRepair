@@ -32,11 +32,14 @@ namespace engine
 			{
 				spriteRenderers[i].lock()->draw();
 			}
+
+			window->display();
 		}
 
 		// TODO : make a better system
 		void Manager::removeSprite()
 		{
+			// If a sprite renderer has been deleted, find the sprite renderer in the list to remove it
 			int spriteCount = spriteRenderers.size();
 			for (int i = 0; i < spriteCount; i++)
 			{
@@ -55,11 +58,6 @@ namespace engine
 			{
 				window->draw(*shape, renderStates);
 			}
-		}
-
-		void Manager::display()
-		{
-			window->display();
 		}
 	}
 }

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <ode/collision.h>
-#include <engine/graphics/ShapeList.hpp>
 #include <engine/gameplay/Actor.hpp>
 
 namespace engine

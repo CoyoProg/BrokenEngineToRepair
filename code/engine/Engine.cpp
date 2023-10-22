@@ -23,6 +23,7 @@ namespace engine
 
 	void Engine::init()
 	{
+		// Create managers
 		mGraphicsManager = std::make_unique<graphics::Manager>();
 		mPhysicsManager = std::make_unique<physics::Manager>();
 		mGameplayManager = std::make_unique<gameplay::Manager>();
@@ -74,14 +75,6 @@ namespace engine
 				Engine::getInstance().exit();
 				break;
 
-			case sf::Event::LostFocus:
-				mInputManager->setIsEnable(false);
-				break;
-
-			case sf::Event::GainedFocus:
-				mInputManager->setIsEnable(true);
-				break;
-
 			case sf::Event::KeyPressed:
 				mInputManager->onKeyPressed(event.key);
 				break;
@@ -90,17 +83,28 @@ namespace engine
 				mInputManager->onKeyReleased(event.key);
 				break;
 
+			case sf::Event::LostFocus:
+				mInputManager->setIsEnable(false);
+				break;
+
+			case sf::Event::GainedFocus:
+				mInputManager->setIsEnable(true);
+				break;
+
 			default:
 				break;
 			}
 		}
 
 		/** TO DO :
-		* 2- KILL DEPENDANCE
+		* 1- KILL DEPENDANCE
 		* (create interface ?)
 		*
-		* 3- Single Responsability principle
-		* (graphics manager ne doit pas gerer les inputs)
+		* 2- Add AddComponent function to avoid code duplication
+		* 
+		* 3- Make a component for the physics
+		* 
+		* 4-Buy a coffee for Gregory
 		*/
 
 		deltaTime = clock.restart().asSeconds();
@@ -110,8 +114,6 @@ namespace engine
 		mGraphicsManager->update();
 
 		mGraphicsManager->draw();
-
-		mGraphicsManager->display();
 	}
 
 	float Engine::getDeltaTime() const
