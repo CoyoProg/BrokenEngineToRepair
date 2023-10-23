@@ -16,6 +16,11 @@ namespace engine
 	{
 		const float Manager::CELL_SIZE = 50.f;
 
+		void Manager::startGame(std::string startMap)
+		{
+			loadMap(startMap);
+		}
+
 		void Manager::update()
 		{
 			for (auto& entity : entities)
@@ -23,6 +28,11 @@ namespace engine
 				entity->update();
 			}
 
+			CheckMapCompletion();
+		}
+
+		void Manager::CheckMapCompletion()
+		{
 			preventMapCompletion = false;
 			if (resetMapRequested)
 			{
@@ -33,6 +43,11 @@ namespace engine
 			{
 				nextMapRequested = false;
 				loadMap(nextMapName);
+			}
+			else if (nextMapRequested && nextMapName.empty())
+			{
+				std::cout << " No More Level" << std::endl;
+				nextMapRequested = false;
 			}
 		}
 

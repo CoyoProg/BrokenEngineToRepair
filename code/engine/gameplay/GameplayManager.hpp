@@ -17,15 +17,14 @@ namespace engine
 		class Manager
 		{
 		public:
+			void startGame(std::string startMap);
 			void update();
 
+			/** Win Loose */
+			void loadNextMap();
 			void gameOver();
 
 			sf::Vector2f getViewCenter() const;
-
-			void loadMap(const std::string &mapName);
-			void loadNextMap();
-
 			const entities::Player &getPlayer() const;
 
 			static const float CELL_SIZE;
@@ -42,6 +41,9 @@ namespace engine
 			bool preventMapCompletion{ false };
 			bool nextMapRequested{ false };
 			bool resetMapRequested{ false };
+
+			void CheckMapCompletion();
+			void loadMap(const std::string& mapName);
 		};
 	}
 }

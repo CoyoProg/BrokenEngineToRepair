@@ -25,30 +25,46 @@ namespace engine
 
 			void Enemy::update()
 			{
-				auto &player = engine::Engine::getInstance().getGameplayManager().getPlayer();
+				CheckPlayerPosition();
+
+				if(isPlayerOnSighet)
+					ShootPlayer();
+			}
+
+			void Enemy::CheckPlayerPosition()
+			{
+				auto& player = engine::Engine::getInstance().getGameplayManager().getPlayer();
+
 				if (player.hasJustMoved())
 				{
-					auto &playerPosition = player.getPosition();
-					auto &myPosition = getPosition();
+					auto& playerPosition = player.getPosition();
+					auto& myPosition = getPosition();
 
 					auto offset = myPosition - playerPosition;
 					offset /= gameplay::Manager::CELL_SIZE;
 					float distance2 = offset.x * offset.x + offset.y * offset.y;
+
 					if (distance2 <= visionRadius * visionRadius)
 					{
-						if (shootDelayCounter < shootDelay)
-						{
-							++shootDelayCounter;
-						}
-						else
-						{
-							engine::Engine::getInstance().getGameplayManager().gameOver();
-						}
+						isPlayerOnSighet = true;
 					}
 					else
 					{
+						isPlayerOnSighet = false;
 						shootDelayCounter = 0;
 					}
+				}
+			}
+
+			void Enemy::ShootPlayer()
+			{
+				if (shootDelayCounter < shootDelay)
+				{
+					++shootDelayCounter;
+				}
+				else
+				{
+					engine::Engine::getInstance().getGameplayManager().gameOver();
 				}
 			}
 

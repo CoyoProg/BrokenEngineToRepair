@@ -52,8 +52,7 @@ namespace engine
 	void Engine::run()
 	{
 		running = true;
-
-		engine::Engine::getInstance().getGameplayManager().loadMap(startMap);
+		mGameplayManager->startGame(startMap);
 
 		sf::Clock clock;
 		while (running)
@@ -66,6 +65,19 @@ namespace engine
 	{
 		mInputManager->clear();
 
+		GetInputs();
+
+		deltaTime = clock.restart().asSeconds();
+
+		mPhysicsManager->update();
+		mGameplayManager->update();
+		mGraphicsManager->update();
+
+		mGraphicsManager->draw();
+	}
+
+	void Engine::GetInputs()
+	{
 		sf::Event event;
 		while (mGraphicsManager->getWindow().getWindow().pollEvent(event))
 		{
@@ -95,25 +107,6 @@ namespace engine
 				break;
 			}
 		}
-
-		/** TO DO :
-		* 1- KILL DEPENDANCE
-		* (create interface ?)
-		*
-		* 2- Add AddComponent function to avoid code duplication
-		* 
-		* 3- Make a component for the physics
-		* 
-		* 4-Buy a coffee for Gregory
-		*/
-
-		deltaTime = clock.restart().asSeconds();
-
-		mPhysicsManager->update();
-		mGameplayManager->update();
-		mGraphicsManager->update();
-
-		mGraphicsManager->draw();
 	}
 
 	float Engine::getDeltaTime() const

@@ -24,6 +24,7 @@ namespace engine
 
 		void run();
 		void Update(sf::Clock& clock);
+
 		float getDeltaTime() const;
 
 		void exit();
@@ -48,5 +49,7 @@ namespace engine
 		std::unique_ptr < input::Manager> mInputManager = nullptr;
 
 		static std::unique_ptr<Engine> instance;
+
+		void GetInputs();
 	};
 }

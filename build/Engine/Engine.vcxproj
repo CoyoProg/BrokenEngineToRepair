@@ -411,8 +411,6 @@
     <ClInclude Include="..\..\code\engine\graphics\ShapeList.hpp" />
     <ClInclude Include="..\..\code\engine\graphics\Window.h" />
     <ClInclude Include="..\..\code\engine\input\InputManager.hpp" />
-    <ClInclude Include="..\..\code\engine\interfaces\IObserver.h" />
-    <ClInclude Include="..\..\code\engine\interfaces\ISubject.h" />
     <ClInclude Include="..\..\code\engine\physics\PhysicsManager.hpp" />
     <ClInclude Include="..\..\code\engine\util\StringId.hpp" />
   </ItemGroup>

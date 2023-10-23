@@ -20,6 +20,9 @@ namespace engine
 
 			private:
 				bool justMoved{ false };
+
+				void CheckCollisions();
+				void MovePlayer(sf::Vector2f& position, float& rotation);
 			};
 		}
 	}

@@ -20,9 +20,11 @@ namespace engine
 
 			void Player::init()
 			{
+				/** Create the Collider */
 				collisionGeomId = dCreateBox(engine::Engine::getInstance().getPhysicsManager().getSpaceId(), gameplay::Manager::CELL_SIZE * 0.9f, gameplay::Manager::CELL_SIZE * 0.9f, 1.f);
 				dGeomSetData(collisionGeomId, this);
 
+				/** Create the Sprite */
 				std::shared_ptr<SpriteRenderer> spriteR = std::make_shared<SpriteRenderer>();
 				spriteR->SetActor(shared_from_this());
 				spriteR->shapeList.load("player");
@@ -36,6 +38,29 @@ namespace engine
 				auto position = getPosition();
 				float rotation = getRotation();
 
+				MovePlayer(position, rotation);
+				CheckCollisions();
+			}
+
+			void Player::CheckCollisions()
+			{
+				auto collisions = engine::Engine::getInstance().getPhysicsManager().getCollisionsWith(collisionGeomId);
+
+				/** Check if the player is colliding with the goal */
+				for (auto& geomId : collisions)
+				{
+					auto entity = reinterpret_cast<Actor*>(dGeomGetData(geomId));
+					auto targetEntity = dynamic_cast<entities::Target*>(entity);
+					if (targetEntity)
+					{
+						engine::Engine::getInstance().getGameplayManager().loadNextMap();
+					}
+				}
+			}
+
+			void Player::MovePlayer(sf::Vector2f& position, float& rotation)
+			{
+				/** Inputs */
 				if (engine::Engine::getInstance().getInputManager().isKeyJustPressed(sf::Keyboard::Left))
 				{
 					justMoved = true;
@@ -64,23 +89,13 @@ namespace engine
 					rotation = 90.f;
 				}
 
+				/** Apply new position & rotation */
 				if (justMoved)
 				{
 					setPosition(position);
 					setRotation(rotation);
 
 					dGeomSetPosition(collisionGeomId, position.x, position.y, 0);
-				}
-
-				auto collisions = engine::Engine::getInstance().getPhysicsManager().getCollisionsWith(collisionGeomId);
-				for (auto &geomId : collisions)
-				{
-					auto entity = reinterpret_cast<Actor *>(dGeomGetData(geomId));
-					auto targetEntity = dynamic_cast<entities::Target *>(entity);
-					if (targetEntity)
-					{
-						engine::Engine::getInstance().getGameplayManager().loadNextMap();
-					}
 				}
 			}
 

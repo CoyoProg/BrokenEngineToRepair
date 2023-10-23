@@ -13,9 +13,6 @@
     <Filter Include="input">
       <UniqueIdentifier>{B54AA90F-215F-D1C0-EAE0-742056B4CDF1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="interfaces">
-      <UniqueIdentifier>{C9206369-B5D8-A4B6-1EE0-7D120AB73FA7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="physics">
       <UniqueIdentifier>{A823A1AC-1403-2048-1D1B-AB1E897986A9}</UniqueIdentifier>
     </Filter>
@@ -54,12 +51,6 @@
     </ClInclude>
     <ClInclude Include="..\..\code\engine\input\InputManager.hpp">
       <Filter>input</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\engine\interfaces\IObserver.h">
-      <Filter>interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\engine\interfaces\ISubject.h">
-      <Filter>interfaces</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\engine\physics\PhysicsManager.hpp">
       <Filter>physics</Filter>
